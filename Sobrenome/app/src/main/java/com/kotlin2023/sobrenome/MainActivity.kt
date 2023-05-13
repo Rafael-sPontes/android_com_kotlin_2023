@@ -2,6 +2,7 @@ package com.kotlin2023.sobrenome
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.kotlin2023.sobrenome.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +20,10 @@ class MainActivity : AppCompatActivity() {
 
             if (binding.editNome.text.isEmpty() || binding.editSobrenome.text.isEmpty()) {
                 binding.txtResult.text = "Nome Inválido!"
+                Toast.makeText(applicationContext, "Nome Inválido!", Toast.LENGTH_SHORT).show()
             } else {
                 binding.txtResult.text = "Olá, $nome $sobrenome"
+                Toast.makeText(applicationContext, "Olá, $nome $sobrenome", Toast.LENGTH_LONG).show()
             }
         }
     }

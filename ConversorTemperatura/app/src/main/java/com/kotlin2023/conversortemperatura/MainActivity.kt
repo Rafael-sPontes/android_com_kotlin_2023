@@ -2,6 +2,7 @@ package com.kotlin2023.conversortemperatura
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.kotlin2023.conversortemperatura.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +20,10 @@ class MainActivity : AppCompatActivity() {
                 val far = String.format("%.2f", (cel * 1.8) + 32)
 
                 binding.txtFar.text = "$far ºF"
+                Toast.makeText(applicationContext, "$far ºF", Toast.LENGTH_LONG).show()
             } else {
                 binding.txtFar.text = "Temperatura Inválida!"
+                Toast.makeText(applicationContext, "Temperatura Inválida!", Toast.LENGTH_SHORT).show()
             }
         }
     }

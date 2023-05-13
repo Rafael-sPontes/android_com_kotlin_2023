@@ -2,7 +2,9 @@ package com.kotlin2023.conversoreurodolar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.kotlin2023.conversoreurodolar.databinding.ActivityMainBinding
+import kotlin.text.Typography.euro
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,8 +21,10 @@ class MainActivity : AppCompatActivity() {
                 val dolar = String.format("%.2f", euro * 0.8)
 
                 binding.txtDolar.text = "$$dolar"
+                Toast.makeText(applicationContext, "$$dolar", Toast.LENGTH_LONG).show()
             } else {
                 binding.txtDolar.text = "Valor Inválido!"
+                Toast.makeText(applicationContext, "Valor Inválido!", Toast.LENGTH_SHORT).show()
             }
         }
     }
