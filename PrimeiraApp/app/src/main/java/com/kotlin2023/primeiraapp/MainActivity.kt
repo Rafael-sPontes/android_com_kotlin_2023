@@ -14,8 +14,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnMostrar.setOnClickListener {
-            val nome = binding.editNome.text.toString()
-            binding.txtResult.text = "Olá, $nome!"
+            if (!binding.editNome.text.toString().isEmpty()) {
+                val nome = binding.editNome.text.toString()
+                binding.txtResult.text = "Olá, $nome!"
+            } else {
+                binding.txtResult.text = "Nome Inválido!"
+            }
         }
     }
 }

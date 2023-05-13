@@ -14,10 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnConvert.setOnClickListener {
-            val euro = binding.editEuro.text.toString().toDouble()
-            val dolar = String.format("%.2f", euro * 0.8)
+            if (!binding.editEuro.text.toString().isEmpty()) {
+                val euro = binding.editEuro.text.toString().toDouble()
+                val dolar = String.format("%.2f", euro * 0.8)
 
-            binding.txtDolar.text = "$$dolar"
+                binding.txtDolar.text = "$$dolar"
+            } else {
+                binding.txtDolar.text = "Valor Inválido!"
+            }
         }
     }
 }

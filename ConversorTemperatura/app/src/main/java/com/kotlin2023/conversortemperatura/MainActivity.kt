@@ -14,10 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnCalc.setOnClickListener {
-            val cel = binding.editCel.text.toString().toDouble()
-            val far = String.format("%.2f", (cel * 1.8) + 32)
+            if (!binding.editCel.text.toString().isEmpty()) {
+                val cel = binding.editCel.text.toString().toDouble()
+                val far = String.format("%.2f", (cel * 1.8) + 32)
 
-            binding.txtFar.text = "$far ºF"
+                binding.txtFar.text = "$far ºF"
+            } else {
+                binding.txtFar.text = "Temperatura Inválida!"
+            }
         }
     }
 }
