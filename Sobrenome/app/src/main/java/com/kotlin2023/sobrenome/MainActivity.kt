@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             val nome = binding.editNome.text.toString().trim()
             val sobrenome = binding.editSobrenome.text.toString().trim()
 
-            if (binding.editNome.text.isEmpty() || binding.editSobrenome.text.isEmpty()) {
+            if (nome.isEmpty() || sobrenome.isEmpty()) {
                 binding.txtResult.text = "Nome Inválido!"
                 Toast.makeText(applicationContext, "Nome Inválido!", Toast.LENGTH_SHORT).show()
             } else {
