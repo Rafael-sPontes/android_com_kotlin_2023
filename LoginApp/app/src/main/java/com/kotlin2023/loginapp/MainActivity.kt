@@ -1,5 +1,6 @@
 package com.kotlin2023.loginapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,8 +21,10 @@ class MainActivity : AppCompatActivity() {
 
             if (user.equals("user") && pass.equals("pass")) {
                 Toast.makeText(applicationContext, "Credenciais Válidas!", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, LoginValidoActivity::class.java))
             } else {
                 Toast.makeText(applicationContext, "Credencias Inválidas!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginInvalidoActivity::class.java))
             }
 
             binding.editUser.setText("")
