@@ -17,19 +17,19 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(binding.root)
 
         val i = intent
-        val inome = i.extras?.getString("txtRen")
+        val iRen = i.extras?.getString("iRen")
 
-        if (inome.equals("") || inome == null) {
-            Toast.makeText(applicationContext, "Nome não inserido!", Toast.LENGTH_SHORT).show()
-        } else {
-            binding.editNome.setText(inome)
-            Toast.makeText(applicationContext, "Nome Validado!", Toast.LENGTH_LONG).show()
-        }
+        binding.editNome.setText(iRen)
 
         binding.btnRename.setOnClickListener {
-            val j = Intent(this, ActivityMain2Binding::class.java)
-            j.putExtra("editRen", binding.editNome.text.toString().trim())
-            startActivity(j)
+            i.putExtra("iRen", binding.editNome.text.toString().trim())
+            setResult(1, i)
+            finish()
+        }
+
+        binding.btnCancel.setOnClickListener {
+            setResult(2, i)
+            finish()
         }
     }
 }
