@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyIntentTest"
         tools:targetApi="31">
         <activity
+            android:name=".MiniToolsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity2"
             android:exported="false" />
         <activity

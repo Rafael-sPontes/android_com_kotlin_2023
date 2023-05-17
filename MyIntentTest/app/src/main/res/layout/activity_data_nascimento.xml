@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="60dp"
+            android:gravity="center"
             android:inputType="number" />
 
     </LinearLayout>
@@ -57,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="60dp"
+            android:gravity="center"
             android:inputType="number" />
 
     </LinearLayout>
@@ -80,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="60dp"
+            android:gravity="center"
             android:inputType="number" />
 
     </LinearLayout>
