@@ -20,13 +20,23 @@ class MiniToolsActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        binding.btnRealEuro.setOnClickListener {
+            val i = Intent(this, SplashScreenActivity4::class.java)
+            startActivity(i)
+        }
+
         binding.btnRealYuan.setOnClickListener() {
             val i = Intent(this, SplashScreenActivity5::class.java)
             startActivity(i)
         }
 
-        binding.btnRealEuro.setOnClickListener {
-            val i = Intent(this, SplashScreenActivity4::class.java)
+        binding.btnCelsiusFahrenheit.setOnClickListener {
+            val i = Intent(this, SplashScreenActivity6::class.java)
+            startActivity(i)
+        }
+
+        binding.btnCelsiusKelvin.setOnClickListener {
+            val i = Intent(this, SplashScreenActivity7::class.java)
             startActivity(i)
         }
 

@@ -23,7 +23,7 @@
         android:id="@+id/button24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="text"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView15"
         app:layout_constraintStart_toStartOf="@+id/imageView15"
@@ -43,7 +43,7 @@
         android:id="@+id/button23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="text"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView14"
         app:layout_constraintStart_toStartOf="@+id/imageView14"
@@ -181,10 +181,10 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <Button
-        android:id="@+id/button20"
+        android:id="@+id/btn_celsius_kelvin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="Celsius ->\n Kelvin"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView12"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
@@ -194,17 +194,17 @@
         android:id="@+id/button22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="text"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView13"
         app:layout_constraintStart_toStartOf="@+id/imageView13"
         app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/btn_celsius_fahrenheit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="Celsius ->\n Fahrenheit"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="@+id/imageView11"
