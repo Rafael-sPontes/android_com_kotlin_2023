@@ -22,7 +22,12 @@ class DataNascimentoActivity : AppCompatActivity() {
             val edit_ano = binding.editAno.text.toString().trim()
 
             if (edit_dia.isEmpty() || edit_mes.isEmpty() || edit_ano.isEmpty()) {
-                Toast.makeText(applicationContext, "Dia / Mês / Ano \n São campos obrigatórios!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Dia / Mês / Ano \nSão campos obrigatórios!", Toast.LENGTH_SHORT).show()
+            } else if (
+                (binding.editDia.text.toString() < "1" || binding.editDia.text.toString() > "31") ||
+                (binding.editMes.text.toString() < "1" || binding.editMes.text.toString() > "12")
+            ) {
+                Toast.makeText(applicationContext, "Dia / Mês / Ano \nDatas Inválidas!", Toast.LENGTH_SHORT).show()
             } else {
                 val i = intent
                 val j = Intent(this, SplashScreenActivity2::class.java)

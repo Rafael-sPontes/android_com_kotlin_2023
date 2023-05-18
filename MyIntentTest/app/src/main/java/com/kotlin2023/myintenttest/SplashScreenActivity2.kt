@@ -16,6 +16,7 @@ class SplashScreenActivity2 : AppCompatActivity() {
             val j = Intent(this, MiniToolsActivity::class.java)
             j.putExtras(i)
             startActivity(j)
+            finish()
         }, 2000)
     }
 }

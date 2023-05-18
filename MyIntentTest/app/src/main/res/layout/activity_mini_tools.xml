@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MiniToolsActivity">
 
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="MiniTools"
+        android:textColor="#0055FF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button24"
         android:layout_width="wrap_content"
@@ -17,10 +30,10 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
     <Button
-        android:id="@+id/button25"
+        android:id="@+id/btn_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="Status"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView16"
         app:layout_constraintStart_toStartOf="@+id/imageView16"
@@ -138,30 +151,30 @@
         app:srcCompat="@drawable/gear_512x512" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btn_real_dolar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="Real -> Dólar"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/btn_real_euro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="Real -> Euro"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/btn_real_yuan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Euro / Dólar"
+        android:text="Real -> Yuan"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView10"
         app:layout_constraintStart_toStartOf="@+id/imageView10"

@@ -13,6 +13,27 @@
         android:theme="@style/Theme.MyIntentTest"
         tools:targetApi="31">
         <activity
+            android:name=".SplashScreenActivity5"
+            android:exported="false" />
+        <activity
+            android:name=".RealYuanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RealEuroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity4"
+            android:exported="false" />
+        <activity
+            android:name=".RealDolarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity3"
+            android:exported="false" />
+        <activity
             android:name=".MiniToolsActivity"
             android:exported="false" />
         <activity
