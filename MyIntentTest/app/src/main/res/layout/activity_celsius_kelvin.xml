@@ -14,7 +14,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="Conversor \n Celsius -> Fahrenheit"
+        android:text="Conversor \n Celsius -> Kelvin"
         android:textColor="#00f"
         android:textSize="30sp" />
 
@@ -32,7 +32,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/edit_kelvin"
+            android:id="@+id/edit_celsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -45,7 +45,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ºK"
+            android:text="ºC"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -58,7 +58,7 @@
         android:text="Calcular" />
 
     <TextView
-        android:id="@+id/txt_fahrenheit"
+        android:id="@+id/txt_kelvin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kelvin"

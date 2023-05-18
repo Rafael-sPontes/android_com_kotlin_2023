@@ -24,8 +24,8 @@ class DataNascimentoActivity : AppCompatActivity() {
             if (edit_dia.isEmpty() || edit_mes.isEmpty() || edit_ano.isEmpty()) {
                 Toast.makeText(applicationContext, "Dia / Mês / Ano \nSão campos obrigatórios!", Toast.LENGTH_SHORT).show()
             } else if (
-                (binding.editDia.text.toString() < "1" || binding.editDia.text.toString() > "31") ||
-                (binding.editMes.text.toString() < "1" || binding.editMes.text.toString() > "12")
+                (binding.editDia.text.toString().trim() <= "0" || binding.editDia.text.toString().trim() >= "32") ||
+                (binding.editMes.text.toString().trim() <= "0" || binding.editMes.text.toString().trim() >= "13")
             ) {
                 Toast.makeText(applicationContext, "Dia / Mês / Ano \nDatas Inválidas!", Toast.LENGTH_SHORT).show()
             } else {

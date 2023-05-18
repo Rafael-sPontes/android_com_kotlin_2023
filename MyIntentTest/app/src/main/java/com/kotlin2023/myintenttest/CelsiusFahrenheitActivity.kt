@@ -16,8 +16,8 @@ class CelsiusFahrenheitActivity : AppCompatActivity() {
 
         binding.btnCalc.setOnClickListener {
             if (!binding.editCelsius.text.toString().isEmpty()) {
-                val edit_celsius = binding.editCelsius.text.toString().toDouble()
-                binding.txtFahrenheit.text = "$edit_celsius ºC"
+                val edit_celsius = binding.editCelsius.text.toString().trim().toDouble()
+                binding.txtFahrenheit.text = String.format("Fahrenheit: %.1f ºF", (edit_celsius * 1.8) + 32)
             } else {
                 binding.txtFahrenheit.text = "Sem Valor!"
                 Toast.makeText(applicationContext, "Valor Inválido!", Toast.LENGTH_SHORT).show()
