@@ -29,11 +29,12 @@ class ListReturnActivity : AppCompatActivity() {
             i.putExtra("txt_item5", "")
             i.putExtra("txt_item6", "")
 
-            startActivity(i)
+            result.launch(i)
         }
 
         result = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.data != null && it.resultCode == 1) {
+                Toast.makeText(applicationContext, "Primeiro Passo OK", Toast.LENGTH_SHORT).show()
                 val txt_item1 = it.data?.getStringExtra("txt_item1").toString()
                 val txt_item2 = it.data?.getStringExtra("txt_item2").toString()
                 val txt_item3 = it.data?.getStringExtra("txt_item3").toString()
