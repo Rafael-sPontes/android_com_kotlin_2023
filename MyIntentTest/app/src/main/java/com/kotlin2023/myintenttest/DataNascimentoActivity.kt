@@ -23,12 +23,12 @@ class DataNascimentoActivity : AppCompatActivity() {
 
             if (edit_dia.isEmpty() || edit_mes.isEmpty() || edit_ano.isEmpty()) {
                 Toast.makeText(applicationContext, "Dia / Mês / Ano \nSão campos obrigatórios!", Toast.LENGTH_SHORT).show()
-            } else if (
+            } else/* if (
                 (binding.editDia.text.toString().trim() <= "0" || binding.editDia.text.toString().trim() >= "32") ||
                 (binding.editMes.text.toString().trim() <= "0" || binding.editMes.text.toString().trim() >= "13")
             ) {
                 Toast.makeText(applicationContext, "Dia / Mês / Ano \nDatas Inválidas!", Toast.LENGTH_SHORT).show()
-            } else {
+            } else*/ {
                 val i = intent
                 val j = Intent(this, SplashScreenActivity2::class.java)
                 j.putExtra("edit_dia", edit_dia)

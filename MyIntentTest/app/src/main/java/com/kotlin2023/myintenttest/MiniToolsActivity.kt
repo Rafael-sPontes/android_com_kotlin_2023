@@ -40,6 +40,11 @@ class MiniToolsActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        binding.btnListReturn.setOnClickListener {
+            val i = Intent(this, SplashScreenActivity8::class.java)
+            startActivity(i)
+        }
+
         binding.btnStatus.setOnClickListener {
             val i = intent
             val j = Intent(this, StatusActivity::class.java)
