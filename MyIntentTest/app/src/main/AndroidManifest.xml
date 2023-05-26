@@ -13,6 +13,21 @@
         android:theme="@style/Theme.MyIntentTest"
         tools:targetApi="31">
         <activity
+            android:name=".ItensPedidoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity10"
+            android:exported="false" />
+        <activity
+            android:name=".MenuItensActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity9"
+            android:exported="false" />
+        <activity
+            android:name=".MenuListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListMakeActivity"
             android:exported="false" />
         <activity

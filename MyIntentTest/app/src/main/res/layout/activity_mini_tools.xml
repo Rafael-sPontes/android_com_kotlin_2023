@@ -40,10 +40,10 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView16" />
 
     <Button
-        android:id="@+id/button23"
+        android:id="@+id/btn_menu_itens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="text"
+        android:text="Menu Itens"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView14"
         app:layout_constraintStart_toStartOf="@+id/imageView14"
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Tela"
+        android:text="Listagem"
         android:textColor="#FF3D00"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView13"
@@ -274,7 +274,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Conversor"
+        android:text="Listagem"
         android:textColor="#FF3D00"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView14"

@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".SplashScreenActivity8">
+    tools:context=".SplashScreenActivity9">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:gravity="center"
-        android:text="SplashScreen 8"
+        android:text="SplashScreen 9"
         android:textColor="#f00"
         android:textSize="30dp" />
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
         android:gravity="center"
-        android:text="Listagem\n List \nReturn"
+        android:text="Listagem\n Menu \nItens"
         android:textColor="#0f0"
         android:textSize="40dp" />
 

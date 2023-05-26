@@ -34,7 +34,7 @@ class ListReturnActivity : AppCompatActivity() {
 
         result = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.data != null && it.resultCode == 1) {
-                Toast.makeText(applicationContext, "Primeiro Passo OK", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Lista Atualizada!", Toast.LENGTH_SHORT).show()
                 val txt_item1 = it.data?.getStringExtra("txt_item1").toString()
                 val txt_item2 = it.data?.getStringExtra("txt_item2").toString()
                 val txt_item3 = it.data?.getStringExtra("txt_item3").toString()
