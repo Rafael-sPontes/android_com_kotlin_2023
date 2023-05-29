@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
         listaNum.add(8)
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaNum)
-        binding.listviewItens.adapter = adapter
 
-        binding.listviewItens.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this, "Clicado em ${listaNum.get(position)}", Toast.LENGTH_SHORT).show()
+        binding.listViewAdapt.adapter = adapter
+
+        binding.listViewAdapt.setOnItemClickListener { parent, view, position, id ->
+            Toast.makeText(this, "Clicando em ${listaNum.get(position)}", Toast.LENGTH_SHORT).show()
         }
-
 
         /*val listaNum = ArrayList<Int>()
 
@@ -41,24 +41,16 @@ class MainActivity : AppCompatActivity() {
 
         //listaNum [1, 10, 5, 4, 8]
 
-        //Primeiro número
-        val primeiro = listaNum.get(0)
-        //1
+        val primeiro = listaNum.get(0) //1
 
-        //Remover item por índice
-        listaNum.removeAt(0)
-        //listaNum [10, 5, 4, 8]
+        listaNum.removeAt(0) //[10, 5, 4, 8]
 
-        //Remover número
-        listaNum.remove(5)
-        //listaNum [10, 4, 8]
+        listaNum.remove(5) //[10, 4, 8]
 
-        //Tamanho da lista
-        val tamanho = listaNum.size
-        //3
+        val tamanho = listaNum.size //3
 
-        //Limpar lista
-        listaNum.clear()
-        //listaNum []*/
+        listaNum.clear() // listaNum []*/
+
+
     }
 }
