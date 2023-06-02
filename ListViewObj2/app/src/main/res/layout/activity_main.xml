@@ -10,8 +10,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="List View Objeto 2"
+        android:text="ListViewObj2"
         android:textColor="#f00"
         android:textSize="20dp" />
 
@@ -32,36 +33,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_inserir"
-            android:layout_width="180dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="10dp"
             android:text="Inserir" />
 
         <Button
             android:id="@+id/btn_editar"
-            android:layout_width="180dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="10dp"
             android:text="Editar" />
+
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listView_itens"
+        android:id="@+id/listView_users"
         android:layout_width="match_parent"
-        android:layout_height="460dp"
+        android:layout_height="445dp"
         android:layout_margin="20dp" />
 
     <Button
         android:id="@+id/btn_eliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Eliminar" />
 
 </LinearLayout>
