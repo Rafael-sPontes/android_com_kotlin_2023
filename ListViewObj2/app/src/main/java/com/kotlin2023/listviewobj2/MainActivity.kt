@@ -37,10 +37,14 @@ class MainActivity : AppCompatActivity() {
         binding.btnInserir.setOnClickListener {
             val username = binding.editUsername.text.toString().trim()
             val password = binding.editPassword.text.toString().trim()
-            listUser.add(Users(username, password))
-            adapter.notifyDataSetChanged()
-            pos = -1
-            Toast.makeText(applicationContext, "Usuário Cadastrado!", Toast.LENGTH_SHORT).show()
+            if (!username.isEmpty() && !password.isEmpty()) {
+                listUser.add(Users(username, password))
+                adapter.notifyDataSetChanged()
+                pos = -1
+                Toast.makeText(applicationContext, "Usuário Cadastrado!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(applicationContext, "Preencha os Campos!", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btnEditar.setOnClickListener {
@@ -56,8 +60,10 @@ class MainActivity : AppCompatActivity() {
                     pos = -1
                     Toast.makeText(applicationContext, "Usuário Atualizado!", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(applicationContext, "Selecione um Usuário!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Preencha os Campos!", Toast.LENGTH_SHORT).show()
                 }
+            } else {
+                Toast.makeText(applicationContext, "Selecione um Usuário!", Toast.LENGTH_SHORT).show()
             }
         }
 
