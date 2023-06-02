@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity() {
                     binding.editPassword.setText("")
                     pos = -1
                     Toast.makeText(applicationContext, "Usuário Atualizado!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(applicationContext, "Selecione um Usuário!", Toast.LENGTH_SHORT).show()
                 }
             }
         }
