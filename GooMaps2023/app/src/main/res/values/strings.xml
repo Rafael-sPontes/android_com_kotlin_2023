@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GooMaps 2023</string>
+    <string name="title_activity_goo_maps">GooMapsActivity</string>
+</resources>
