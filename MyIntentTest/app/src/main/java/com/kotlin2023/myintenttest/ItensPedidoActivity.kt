@@ -27,10 +27,10 @@ class ItensPedidoActivity : AppCompatActivity() {
         val preco_final_chocolate = (qtd_chocolate.toString().toDouble()) * preco_chocolate
         val valor_final = preco_final_cafe + preco_final_pao + preco_chocolate
 
-        binding.txtPedido.text = "Pedido:\n" +
+        /*binding.txtPedido.text = "Pedido:\n" +
                 "Café: ${qtd_cafe}x | R$${preco_final_cafe}\n" +
                 "Pão: ${qtd_pao}x | R$${preco_final_pao}\n" +
                 "Chocolate: ${qtd_chocolate}x | R$${preco_final_chocolate}\n" +
-                "Valor Total: R$$valor_final"
+                "Valor Total: R$$valor_final"*/
     }
 }
