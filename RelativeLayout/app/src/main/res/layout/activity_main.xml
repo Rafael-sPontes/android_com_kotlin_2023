@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_A"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_centerInParent="true"
+        android:background="#f00"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txt_B"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_above="@+id/txt_A"
+        android:layout_centerInParent="true"
+        android:background="#00f"
+        android:gravity="center"
+        android:text="B"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txt_C"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_centerInParent="true"
+        android:layout_toEndOf="@+id/txt_A"
+        android:background="#0f0"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txt_D"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/txt_A"
+        android:layout_centerInParent="true"
+        android:background="#ff0"
+        android:gravity="center"
+        android:text="D"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txt_E"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_centerInParent="true"
+        android:layout_toStartOf="@+id/txt_A"
+        android:background="#f0f"
+        android:gravity="center"
+        android:text="E"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+</RelativeLayout>

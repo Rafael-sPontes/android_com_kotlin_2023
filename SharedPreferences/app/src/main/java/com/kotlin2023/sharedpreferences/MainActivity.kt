@@ -3,6 +3,7 @@ package com.kotlin2023.sharedpreferences
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.kotlin2023.sharedpreferences.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,15 +18,20 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = this.getSharedPreferences("valores", Context.MODE_PRIVATE)
         val valor = sharedPreferences.getString("valor", "")
 
-        binding.txtValor.text = valor
+        binding.txtValor.setText(valor)
 
         binding.btnGravar.setOnClickListener {
             val novoValor = binding.editValor.text.toString().trim()
-            binding.txtValor.text = novoValor
 
-            val editor = sharedPreferences.edit()
-            editor.putString("valor", novoValor)
-            editor.apply()
+            if (!novoValor.equals("")) {
+                binding.txtValor.setText(novoValor)
+
+                val editor = sharedPreferences.edit()
+                editor.putString("valor", novoValor)
+                editor.apply()
+            } else {
+                Toast.makeText(applicationContext, "Valor Inválido!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
