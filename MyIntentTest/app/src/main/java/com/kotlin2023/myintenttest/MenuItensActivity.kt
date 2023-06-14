@@ -49,14 +49,35 @@ class MenuItensActivity : AppCompatActivity() {
         }
 
         binding.btnPedido.setOnClickListener {
-            val i = Intent(this, SplashScreenActivity10::class.java)
-            i.putExtra("precoCafe", precoCafe)
-            i.putExtra("precoPao", precoPao)
-            i.putExtra("precoChocolate", precoChocolate)
-            i.putExtra("qtdCafe", binding.editQtdCafe.text.toString().trim())
-            i.putExtra("qtdPao", binding.editQtdPao.text.toString().trim())
-            i.putExtra("qtdChocolate", binding.editQtdChocolate.text.toString().trim())
-            startActivity(i)
+
+            if (!binding.checkCafe.isChecked() && !binding.checkPao.isChecked() && !binding.checkChocolate.isChecked()) {
+                Toast.makeText(applicationContext, "Pedido Vazio!", Toast.LENGTH_SHORT).show()
+            } else {
+                val i = Intent(this, SplashScreenActivity10::class.java)
+                i.putExtra("precoCafe", precoCafe)
+                i.putExtra("precoPao", precoPao)
+                i.putExtra("precoChocolate", precoChocolate)
+
+                if (binding.checkCafe.isChecked()) {
+                    i.putExtra("qtdCafe", binding.editQtdCafe.text.toString().trim())
+                } else {
+                    i.putExtra("qtdCafe", "0")
+                }
+
+                if (binding.checkPao.isChecked()) {
+                    i.putExtra("qtdPao", binding.editQtdPao.text.toString().trim())
+                } else {
+                    i.putExtra("qtdPao", "0")
+                }
+
+                if (binding.checkChocolate.isChecked()) {
+                    i.putExtra("qtdChocolate", binding.editQtdChocolate.text.toString().trim())
+                } else {
+                    i.putExtra("qtdChocolate", "0")
+                }
+
+                startActivity(i)
+            }
         }
     }
 }
