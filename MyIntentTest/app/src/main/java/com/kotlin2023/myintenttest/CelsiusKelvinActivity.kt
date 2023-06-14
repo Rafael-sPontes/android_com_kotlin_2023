@@ -19,7 +19,7 @@ class CelsiusKelvinActivity : AppCompatActivity() {
                 val edit_celsius = binding.editCelsius.text.toString().trim().toDouble()
                 binding.txtKelvin.text = String.format("Kelvin: %.2f ºK", edit_celsius + 273.15)
             } else {
-                binding.txtKelvin.text = "Sem Valor!"
+                binding.txtKelvin.text = "Valor Inválido!"
                 Toast.makeText(applicationContext, "Sem Inválido!", Toast.LENGTH_SHORT).show()
             }
         }

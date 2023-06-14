@@ -12,144 +12,138 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingVertical="10dp">
+        android:padding="5dp">
 
         <CheckBox
             android:id="@+id/check_cafe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="60dp"
+            android:minWidth="70dp"
             android:text="Café" />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/mesa_418x418" />
+            android:src="@drawable/cafe" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Quantidade:" />
+            android:text="Quant:" />
 
         <EditText
             android:id="@+id/edit_qtd_cafe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:gravity="center"
             android:hint="0"
             android:minWidth="30dp" />
 
         <TextView
-            android:id="@+id/txt_preco_cafe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="R$" />
+            android:layout_marginLeft="5dp"
+            android:text="R$2,00" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingVertical="10dp">
+        android:padding="5dp">
 
         <CheckBox
             android:id="@+id/check_pao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="60dp"
+            android:minWidth="70dp"
             android:text="Pão" />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/mesa_418x418" />
+            android:src="@drawable/pao" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Quantidade:" />
+            android:text="Quant:" />
 
         <EditText
             android:id="@+id/edit_qtd_pao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:gravity="center"
             android:hint="0"
             android:minWidth="30dp" />
 
         <TextView
-            android:id="@+id/txt_preco_pao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="R$" />
+            android:layout_marginLeft="5dp"
+            android:text="R$2,00" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingVertical="10dp">
+        android:padding="5dp">
 
         <CheckBox
             android:id="@+id/check_chocolate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="60dp"
+            android:minWidth="70dp"
             android:text="Chocolate" />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/mesa_418x418" />
+            android:src="@drawable/chocolate" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Quantidade:" />
+            android:text="Quant:" />
 
         <EditText
             android:id="@+id/edit_qtd_chocolate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:gravity="center"
             android:hint="0"
             android:minWidth="30dp" />
 
         <TextView
-            android:id="@+id/txt_preco_chocolate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="R$" />
+            android:layout_marginLeft="5dp"
+            android:text="R$2,00" />
 
     </LinearLayout>
 
@@ -157,6 +151,7 @@
         android:id="@+id/btn_pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Realizar Pedido!" />
+        android:layout_marginTop="10dp"
+        android:text="Realizar Pedido" />
 
 </LinearLayout>
