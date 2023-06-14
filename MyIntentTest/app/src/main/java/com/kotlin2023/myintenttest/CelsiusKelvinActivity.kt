@@ -20,7 +20,7 @@ class CelsiusKelvinActivity : AppCompatActivity() {
                 binding.txtKelvin.text = String.format("Kelvin: %.2f ºK", edit_celsius + 273.15)
             } else {
                 binding.txtKelvin.text = "Valor Inválido!"
-                Toast.makeText(applicationContext, "Sem Inválido!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Valor Inválido!", Toast.LENGTH_SHORT).show()
             }
         }
     }
