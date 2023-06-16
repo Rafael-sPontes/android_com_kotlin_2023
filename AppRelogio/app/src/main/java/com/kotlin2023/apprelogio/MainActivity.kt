@@ -2,6 +2,12 @@ package com.kotlin2023.apprelogio
 
 import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.opengl.Visibility
+import android.os.BatteryManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -9,159 +15,50 @@ import android.os.Looper
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.kotlin2023.apprelogio.databinding.ActivityFullscreenBinding
+import android.widget.Toast
+import com.kotlin2023.apprelogio.databinding.ActivityMainBinding
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFullscreenBinding
-    private lateinit var fullscreenContent: TextView
-    private lateinit var fullscreenContentControls: LinearLayout
-    private val hideHandler = Handler(Looper.myLooper()!!)
+    private lateinit var binding: ActivityMainBinding
+    private var isChecked = true
 
-    @SuppressLint("InlinedApi")
-    private val hidePart2Runnable = Runnable {
-        // Delayed removal of status and navigation bar
-        if (Build.VERSION.SDK_INT >= 30) {
-            fullscreenContent.windowInsetsController?.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-        } else {
-            // Note that some of these constants are new as of API 16 (Jelly Bean)
-            // and API 19 (KitKat). It is safe to use them, as they are inlined
-            // at compile-time and do nothing on earlier devices.
-            fullscreenContent.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LOW_PROFILE or
-                        View.SYSTEM_UI_FLAG_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-        }
-    }
-    private val showPart2Runnable = Runnable {
-        // Delayed display of UI elements
-        supportActionBar?.show()
-        fullscreenContentControls.visibility = View.VISIBLE
-    }
-    private var isFullscreen: Boolean = false
-
-    private val hideRunnable = Runnable { hide() }
-
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-    private val delayHideTouchListener = View.OnTouchListener { view, motionEvent ->
-        when (motionEvent.action) {
-            MotionEvent.ACTION_DOWN -> if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS)
-            }
-
-            MotionEvent.ACTION_UP -> view.performClick()
-            else -> {
-            }
-        }
-        false
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityFullscreenBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        isFullscreen = true
-
-        // Set up the user interaction to manually show or hide the system UI.
-        fullscreenContent = binding.fullscreenContent
-        fullscreenContent.setOnClickListener { toggle() }
-
-        fullscreenContentControls = binding.fullscreenContentControls
-
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        binding.dummyButton.setOnTouchListener(delayHideTouchListener)
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100)
-    }
-
-    private fun toggle() {
-        if (isFullscreen) {
-            hide()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
         } else {
-            show()
+            window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
         }
-    }
 
-    private fun hide() {
-        // Hide UI first
-        supportActionBar?.hide()
-        fullscreenContentControls.visibility = View.GONE
-        isFullscreen = false
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        // Schedule a runnable to remove the status and navigation bar after a delay
-        hideHandler.removeCallbacks(showPart2Runnable)
-        hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-    private fun show() {
-        // Show the system bar
-        if (Build.VERSION.SDK_INT >= 30) {
-            fullscreenContent.windowInsetsController?.show(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-        } else {
-            fullscreenContent.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        val bateriaReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                if (intent != null) {
+                    val nivel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
+                    Toast.makeText(applicationContext, nivel.toString(), Toast.LENGTH_SHORT).show()
+                    binding.txtNivBat.text = "$nivel%"
+                }
+            }
         }
-        isFullscreen = true
+        registerReceiver(bateriaReceiver , IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
-        // Schedule a runnable to display UI elements after a delay
-        hideHandler.removeCallbacks(hidePart2Runnable)
-        hideHandler.postDelayed(showPart2Runnable, UI_ANIMATION_DELAY.toLong())
-    }
-
-    /**
-     * Schedules a call to hide() in [delayMillis], canceling any
-     * previously scheduled calls.
-     */
-    private fun delayedHide(delayMillis: Int) {
-        hideHandler.removeCallbacks(hideRunnable)
-        hideHandler.postDelayed(hideRunnable, delayMillis.toLong())
-    }
-
-    companion object {
-        /**
-         * Whether or not the system UI should be auto-hidden after
-         * [AUTO_HIDE_DELAY_MILLIS] milliseconds.
-         */
-        private const val AUTO_HIDE = true
-
-        /**
-         * If [AUTO_HIDE] is set, the number of milliseconds to wait after
-         * user interaction before hiding the system UI.
-         */
-        private const val AUTO_HIDE_DELAY_MILLIS = 3000
-
-        /**
-         * Some older devices needs a small delay between UI widget updates
-         * and a change of the status and navigation bar.
-         */
-        private const val UI_ANIMATION_DELAY = 300
+        binding.checkNivBat.setOnClickListener {
+            if (isChecked) {
+                isChecked = false
+                binding.txtNivBat.visibility = View.GONE
+            } else {
+                isChecked = true
+                binding.txtNivBat.visibility = View.VISIBLE
+            }
+            binding.checkNivBat.isChecked = isChecked
+        }
     }
 }
