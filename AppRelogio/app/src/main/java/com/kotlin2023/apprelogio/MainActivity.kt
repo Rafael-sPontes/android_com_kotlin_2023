@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        registerReceiver(bateriaReceiver , IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+        registerReceiver(bateriaReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
         binding.checkNivBat.setOnClickListener {
             if (isChecked) {
@@ -59,6 +59,22 @@ class MainActivity : AppCompatActivity() {
                 binding.txtNivBat.visibility = View.VISIBLE
             }
             binding.checkNivBat.isChecked = isChecked
+        }
+
+        binding.layoutMenu.animate().translationY(500F)
+
+        binding.imgPreferencias.setOnClickListener {
+            binding.layoutMenu.visibility = View.VISIBLE
+            binding.layoutMenu.animate().translationY(0F).setDuration(
+                resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
+            )
+        }
+
+        binding.imgFechar.setOnClickListener {
+            binding.layoutMenu.animate().translationY(binding.layoutMenu.measuredHeight.toFloat())
+                .setDuration(
+                    resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
+                )
         }
     }
 }
