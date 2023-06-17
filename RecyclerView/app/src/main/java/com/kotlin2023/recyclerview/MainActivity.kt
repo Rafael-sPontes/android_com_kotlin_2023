@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kotlin2023.recyclerview.adapter.CarroListAdapter
+import com.kotlin2023.recyclerview.data.CarroMock
 import com.kotlin2023.recyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.recView.layoutManager = LinearLayoutManager(this)
-        binding.recView.adapter = CarroListAdapter()
+
+        val mock = CarroMock()
+        binding.recView.adapter = CarroListAdapter(mock.listaCarros)
     }
 }
